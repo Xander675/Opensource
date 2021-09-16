@@ -1,0 +1,36 @@
+echo "Het script voor een nextcloud omgeving wordt nu uitgevoerd"
+
+echo "welke webserver wil je? apache/nginx/lighttp"
+
+read webserver
+
+if [ $webserver = "nginx" ]
+then
+
+apt-get install nginx
+
+elif [ $webserver = "apache" ]
+then
+
+apt-get install apache2
+
+else
+echo "geen webserver is geinstalleerd"
+
+fi
+
+echo "wil je de phpmodules nu installeren?"
+read phpmodules
+
+if [ $phpmodules = "ja"
+then
+zypper install php7-ctype php7-curl
+fi
+
+echo "wil je het script opnieuw laden?"
+
+sed 's/xander/g'
+
+read a
+
+done
